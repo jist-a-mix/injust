@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     actioncable (5.2.2.1)
       actionpack (= 5.2.2.1)
@@ -291,6 +291,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   bootsnap (>= 1.1.0)
   bootstrap
   bootstrap-sass
@@ -319,6 +320,7 @@ DEPENDENCIES
   rails-i18n (~> 5.1)
   recaptcha
   sass-rails (~> 5.0)
+  sassc-rails
   selenium-webdriver
   simple_form
   spring
