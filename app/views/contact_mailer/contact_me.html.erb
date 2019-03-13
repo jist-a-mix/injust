@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>
+  Un nouveau message a été envoyé depuis le site :
+</p>
+  <strong> Nom : </strong>
+  <%= @nom%>
+  <br>
+  <strong> Prénom : </strong>
+  <%= @prenom%>
+  <br>
+  <strong>Adresse email : </strong>
+  <%= @email%>
+  <br>
+  <strong> Message : </strong>
+  <br>
+  <%=  @message%>
+  </body>
+</html>

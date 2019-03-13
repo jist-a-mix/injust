@@ -1,0 +1,17 @@
+<h5>Commentaires</h5>
+<% if commentable.comments.blank?%>
+            <p>Commentez le premier</p>
+            
+              <%else%>
+            <a class="btn btn-primary float-right"  href="/posts/<%= poste.friendly_id %>"></a>
+  <% commentable.comments.each do |comment| %>
+  <div class="cool">
+  	<ul class="list-group-item list-group-item-primary">
+    <li class="list-group-item list-group-item-action list-group-item-dark"><i>commentaire de <%= comment.author%></i> : <%= comment.body %></li>
+    <%= comment.created_at.strftime("le %e-%m-%Y ,à %Hh%M")%>
+</ul>
+
+  </div>
+  <%end%>
+  
+    

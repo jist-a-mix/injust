@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<!--
+    Landed by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Injustice World</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    </head>
+    <body >
+             
+     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="/">Injustice World</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+               <% if user_signed_in? %>
+        <h3>Bienvenue <%= @user.username%></h3>
+        <%end%>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <% if user_signed_in? %>
+           
+            <li class="nav-item">
+               <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " Nouveau post" , new_post_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " Se déconnecter ", destroy_user_session_path, method: :delete ,class: "button primary" %></li>
+
+            
+            <%else%>
+            <li class="nav-item">
+              <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
+            </li>
+            </li>
+           
+            <li class="nav-item">
+              <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+            </li>
+             <li class="nav-item">
+              <%= link_to " S'inscrire gratuitement ",new_user_registration_path ,class: "button primary" %></li>
+           
+            <%end%>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+                </header>
+
+            <!-- Banner -->
+                <section id="banner">
+                    <div class="content">
+                        <header>
+                            <h2>The future is justice</h2>
+                            <p>Denoncez toutes vos injustices<br />
+                            ici<br><br><h3><i><strong># InjusticeWorld</strong></i></p>
+                        </header>
+                        <span class="image"><img src="/assets/nojustice.jpeg" alt="" /></span>
+                    </div>
+                    <a href="#one" class="goto-next scrolly">Next</a>
+                </section>
+
+            <!-- One -->
+                <section id="one" class="spotlight style1 bottom">
+                    <span class="image fit main"><img src="assets/corrupt1.png" alt="none"  /></span>
+                    <div class="content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4 col-12-medium">
+                                    <header>
+                                        <h2>En France trop d'inegalités et trop de discriminations existent</h2>
+                                        <p>la discrimination est interdite par la loi et sanctionnée</p>
+                                    </header>
+                                </div>
+                                <div class="col-4 col-12-medium">
+                                    <p>La discrimination désigne le fait de distinguer et de traiter de manière différente une personne ou un groupe d’individus par rapport au reste de la société et ce, sur la base de certains critères ou signes distinctifs. Les motifs de discrimination sont nombreux et ne sont pas toujours visibles : <strong>la couleur de peau</strong> (racisme), <strong>le sexe</strong> (sexisme), <strong>la religion </strong>(antisémitisme, islamophobie), <strong>la sexualité ou l’identité sexuelle</strong> (homophobie), <strong>l’âge</strong> , <strong>l’origine</strong> (xénophobie), <strong>le handicap</strong>, <strong>l’apparence physique</strong>, etc...</p>
+                                </div>
+                                <div class="col-4 col-12-medium">
+                                    <p>lorsqu’un individu est traité de manière défavorable dans des situations précises telles que l’accès à l’emploi, au logement, à l’éducation ou la fourniture de biens et de services.<br>Dans le pire des cas, la discrimination se traduit par des violences pouvant parfois entraîner la mort. Elle peut aussi se manifester par des injures ou des remarques désobligeantes. Mais elle peut aussi être exprimée de façon moins explicite et plutôt insidieuse.<strong> La discrimination EST INTERDITE</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#two" class="goto-next scrolly">Next</a>
+                </section>
+
+            <!-- Two -->
+                <section id="two" class="spotlight style2 right">
+                    <span class="image fit main2"><img src="/assets/egalite4.png" alt="" /></span>
+                    <div class="content">
+                        <header>
+                            <h2>Vous etes temoins ou victimes?</h2>
+                            <p></p>
+                        </header>
+                        <p>Vous avez le sentiment que la justice vous abandonne? Parlez en, en tout <strong>anonymat</strong>. Il n'est jamais trop tard pour reagir</p>
+                        <ul class="actions">
+                            <li><a href="/users/sign_up" class="button">Inscrivez vous gratuitement</a></li>
+                        </ul>
+                    </div>
+                    <a href="#three" class="goto-next scrolly">Next</a>
+                </section>
+
+            <!-- Three -->
+                <section id="three" class="spotlight style3 left">
+                    <span class="image fit main3 bottom"><img src="/assets/democrat2.jpg" alt="" /></span>
+                    <div class="content">
+                        <header>
+                            <h2>N'oubliez pas que personne n'est intouchable</h2>
+                            <p></p>
+                        </header>
+                        <p>Un commerce, les forces de l'ordre, les magistrats, votre employeur.<strong> L'abus de pouvoir</strong> se situe n'importe où <strong>denoncez le </strong>tout comme les autres membres</p>
+                        <ul class="actions">
+                            <li><a href= "posts" class="button">Voir les derniers posts</a></li>
+                        </ul>
+                    </div>
+                    <a href="#four" class="goto-next scrolly">Next</a>
+                </section>
+
+            <!-- Four -->
+                <section id="four" class="wrapper style1 special fade-up">
+                    <div class="container">
+                        <header class="major">
+                            <h2>Les valeurs fondamentales de notre communauté</h2>
+                            <p></p>
+                        </header>
+                        <div class="box alt">
+                            <div class="row gtr-uniform">
+                                <section class="col-4 col-6-medium col-12-xsmall">
+                                    <span class="fas fa-hand-holding-heart"></span>
+                                    <h3>Respect</h3>
+                                    <p>.</p>
+                                </section>
+                                <section class="col-4 col-6-medium col-12-xsmall">
+                                    <span class="fas fa-handshake"></span>
+                                    <h3>Solidarité</h3>
+                                    <p></p>
+                                </section>
+                                <section class="col-4 col-6-medium col-12-xsmall">
+                                    <span class="fas fa-yin-yang"></span>
+                                    <h3>Empathie</h3>
+                                    <p></p>
+                                </section>
+                                <section class="col-4 col-6-medium col-12-xsmall">
+                                    <span class="fas fa-dove"></span>
+                                    <h3>Liberté</h3>
+                                    <p></p>
+                                </section>
+                                <section class="col-4 col-6-medium col-12-xsmall">
+                                    <span class="fas fa-globe"></span>
+                                    <h3>Tolerance</h3>
+                                    <p></p>
+                                </section>
+                                
+                               
+                            </div>
+                        </div>
+                        <footer class="major">
+                            <ul class="actions special">
+                                <li><a href="/users/sign_up" class="button">S'inscrire maintenant</a></li>
+                            </ul>
+                        </footer>
+                    </div>
+                </section>
+
+            <!-- Five -->
+                <section id="five" class="wrapper style2 special fade">
+                    <div class="container">
+                        <header>
+                            <h2>Magna faucibus lorem diam</h2>
+                            <p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
+                        </header>
+                        <form method="post" action="#" class="cta">
+                            <div class="row gtr-uniform gtr-50">
+                                <div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
+                                <div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+            <!-- Footer -->
+                <footer id="footer">
+                    <h3>Partagez vos injustices sur les reseaux sociaux avec le #InjusticeWorld</h3><br><br>
+                    <ul class="icons">
+                        <li><a href="https://twitter.com/" class="fab fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="https://fr-fr.facebook.com" class="fab fa-facebook"><span class="label">Facebook</span></a></li>
+                        <!--<li><a href="#" class="fab fa-linkedin"><span class="label">LinkedIn</span></a></li>-->
+                       <!-- <li><a href="#" class="fab fa-instagram"><span class="label">Instagram</span></a></li>
+                        <!--<li><a href="#" class="fab fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="#" class="fa fa-envelope"><span class="label">Email</span></a></li> -->
+                    </ul>
+                    <ul class="copyright">
+                        <li><a href = "home/cgu"> Conditions generales d'utilisation</a></li><li>&copy; InjusticeWorld.com. All rights reserved.</li><li>Design: HTML5 UP</li>
+                    </ul>
+                </footer>
+
+        </div>
+
+        
+
+    </body>
+</html>

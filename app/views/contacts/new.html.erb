@@ -1,0 +1,114 @@
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Injustice World</title>
+
+    
+
+  </head>
+   
+    
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="/">Injustice World</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <% if user_signed_in? %>
+            
+            <li class="nav-item">
+               <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " Nouveau post" , new_post_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <%= link_to " Se déconnecter ", destroy_user_session_path, method: :delete ,class: "nav-link" %>
+            </li>
+            <%else%>
+            <li class="nav-item">
+              <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
+            </li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " S'enregistrer " , new_user_registration_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <%end%>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('/assets/email.png')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="page-heading">
+              <h1>Contactez nous</h1>
+              <span class="subheading">Une question? N'hesitez pas.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+<body><br><br><br>
+  <h2 style="color:#4cbf6a ">Contact</h2>
+<div id= "post-injust">
+<%= simple_form_for @contact, url: create_contact_url do |f| %>
+    
+  <%= f.error_notification %>
+  
+
+  <div class="form-inputs"><br>
+
+    <%= f.input :prenom,label: 'Prenom'
+                %>
+                <%= f.input :nom,label: 'Nom'
+                %>
+                <%= f.input :email,label: 'email'
+                %>
+    <%= f.text_area :message,label: 'message',:input_html => {:rows => 10}
+                  %>(detaillez au maximum,une reponse vous sera apportée dans les meilleurs delais)<br><br>
+
+ <%= recaptcha_tags %>
+
+ 
+  <div class="form-actions">
+    <%= f.button :submit, "envoyer message" %>
+  </div>
+<% end %>
+</div>
+</div>
+
+
+</body>
+    
+
+   
+
+  
+
+</html>

@@ -1,0 +1,77 @@
+ <header><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="/">Injustice World</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <% if user_signed_in? %>
+            
+            <li class="nav-item">
+               <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " Nouveau post" , new_post_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " Se déconnecter ", destroy_user_session_path, method: :delete ,class: "nav-link" %>
+            </li>
+            <%else%>
+            <li class="nav-item">
+              <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
+            </li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " S'enregistrer " , new_user_registration_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+            </li>
+            <li class="nav-item">
+              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>>
+            </li>
+            <%end%>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+</header>
+
+
+<body><br><br><br>
+  <h2 style="color:#4cbf6a "> Mon injustice</h2>
+<div id= "post-injust">
+<%= simple_form_for @post do |f| %>
+  
+
+  <div class="form-inputs"><br>
+    <%= f.input :title,label: 'Titre'
+                %>
+    <%= f.input :body,label: 'description',:input_html => {:rows => 10}
+                  %>
+    
+ <select name="category_id">
+    <% @categories.each do |category| %>
+      <option value="<%= category.id %>"><%= category.name %></option>
+    <% end %>
+  </select>
+
+ 
+  <div class="form-actions">
+    <%= f.button :submit, "Poster mon injustice" %>
+  </div>
+<% end %>
+</div>
+</div>
+
+</body>

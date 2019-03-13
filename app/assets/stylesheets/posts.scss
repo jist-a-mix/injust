@@ -1,0 +1,30 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+*= require_tree .
+ *= require_self
+*= require bootstrap/css/bootstrap.min
+ *= require clean-blog.min
+ *= require fontawesome-free/css/all.min
+ *= require font-awesome
+ */
+ h2{
+ 	text-align: center;
+ 	
+ }
+ #post-injust .form-inputs {
+ 	width:50%;
+ 	margin: auto;  
+  position: absolute;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+ 	text-align: center;
+ }
+
+ #post-injust {
+ 	position:relative;
+ 	
+ }
