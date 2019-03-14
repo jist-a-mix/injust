@@ -2,8 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /*
-*= require main
- *= require noscript
+*= require clean-blog.min
+ *= require fontawesome-free/css/all.min
+ *= require font-awesome
  *= require bootstrap/css/bootstrap.min
  *= require_tree .
  *= require_self
