@@ -11,13 +11,13 @@
 // about supported directives.
 
 //= require jquery3
-
+//= require bootstrap-sprockets
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 //= require jquery/jquery.min
-    //= require bootstrap/js/bootstrap.bundle.min
+    
 
    //= require clean-blog.min
 //= require jquery.min
