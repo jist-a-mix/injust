@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 /*
-*= require_tree .
- *= require_self
+
 *= require main
  *= require noscript
  *= require font-awesome.min
  *= require font-awesome
+ *= require_tree .
+ *= require_self
  */
