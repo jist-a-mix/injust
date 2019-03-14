@@ -9,7 +9,7 @@ Rails.application.config.assets.version = '1.0'
 
 Rails.application.config.assets.precompile << Proc.new { |path, fn| fn =~ /vendor\/assets\/images/ }
 
-
+Rails.application.config.assets.precompile += [/.*\.js/,/.*\.scss/] 
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.paths << Rails.root.join('lib')
 Rails.application.config.assets.paths << Rails.root.join('lib', 'assets', 'fonts') 
