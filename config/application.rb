@@ -11,16 +11,6 @@ module Injust
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
-ActionMailer::Base.smtp_settings = {
-
-	:address		=> 'smtp.gmail.com',
-	:domain		=> 'mail.google.com',
-	:port		=> 587,
-	:user_name		=> ENV["EMAIL_USERNAME"],
-	:password		=> ENV["EMAIL_PASSWORD"],
-	:authentication => 'login',
-	:enable_starttls_auto => true
-}
 config.i18n.fallbacks = [I18n.default_locale]
 config.i18n.available_locales = %w(en fr)
 

@@ -97,12 +97,12 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
    
   # SMTP settings for gmail
-  config.action_mailer.default_url_options = { :host => "https://injustice.world.herokuapp.com"}
+  config.action_mailer.default_url_options = { :host => "injustice.world.herokuapp.com"}
   
   config.action_mailer.delivery_method = :smtp
    config.action_mailer.perform_deliveries = true
 
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
   ActionMailer::Base.smtp_settings = {
 
   :address    => 'smtp.gmail.com',
@@ -110,7 +110,7 @@ Rails.application.configure do
   :port   => 587,
   :user_name    => ENV["EMAIL_USERNAME"],
   :password   => ENV["EMAIL_PASSWORD"],
-  :authentication => 'plain',
+  :authentication => 'login',
   :enable_starttls_auto => true
 }
 end
