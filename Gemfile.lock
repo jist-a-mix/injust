@@ -294,7 +294,7 @@ DEPENDENCIES
   rails-erd
   rails-i18n (~> 5.1)
   recaptcha
-  sass-rails (~> 5.0)
+  sass-rails (>= 3.2)
   selenium-webdriver
   simple_form
   spring
