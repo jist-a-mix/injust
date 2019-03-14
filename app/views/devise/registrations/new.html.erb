@@ -19,11 +19,11 @@
 
     <%= f.input :password,
                 required: true,
-                hint: (t('devise.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
+                hint: (t('devise.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length)
+                 %>
     <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+                required: true
+                %>
 
                 <%= recaptcha_tags %>
   </div>
