@@ -63,18 +63,17 @@
       </div>
     </nav>
                 </header>
-                    <% if user_signed_in? %>
-        <h3 style="color:#B9E2DD">Bienvenue  <%= @user.username%></h3>
-        <%end%>
+            
 
             <!-- Banner -->
                 <section id="banner">
-                    <div class="content">
-                        <header>
-                               <% if user_signed_in? %>
+                                       <% if user_signed_in? %>
         <h3 style="color:#B9E2DD">Bienvenue <%= @user.username%></h3>
         <%end%>
-                            <h2>The future is justice</h2>
+                   
+                    <div class="content">
+                        <header>
+                     <h2>The future is justice</h2>
                             <p>Denoncez toutes vos injustices<br />
                             ici<br><br><h3><i><strong># InjusticeWorld</strong></i></p>
                         </header>
