@@ -3,7 +3,7 @@
             <p>Commentez le premier</p>
             
               <%else%>
-            <a class="btn btn-primary float-right"  href="/posts/<%= poste.friendly_id %>"></a>
+            <a class="btn btn-primary float-right"  href="/posts/<%= @post.friendly_id %>"></a>
   <% commentable.comments.each do |comment| %>
   <div class="cool">
   	<ul class="list-group-item list-group-item-primary">
