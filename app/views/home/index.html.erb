@@ -71,6 +71,9 @@
                 <section id="banner">
                     <div class="content">
                         <header>
+                               <% if user_signed_in? %>
+        <h3 style="color:#B9E2DD">Bienvenue <%= @user.username%></h3>
+        <%end%>
                             <h2>The future is justice</h2>
                             <p>Denoncez toutes vos injustices<br />
                             ici<br><br><h3><i><strong># InjusticeWorld</strong></i></p>
@@ -88,7 +91,7 @@
                             <div class="row">
                                 <div class="col-4 col-12-medium">
                                     <header><br><br>
-                                        <h2 style="color:#efaaaa">En France trop d'inegalités et trop de discriminations existent</h2>
+                                        <h2 style="color:#efaaaa">En France trop d'inegalités et trop de discriminations existent</h2><br>
                                         <p>la discrimination est interdite par la loi et sanctionnée</p>
                                     </header>
                                 </div>
@@ -109,7 +112,7 @@
                     <span class="image fit main2"><img src="/assets/egalite4.png" alt="" /></span>
                     <div class="content">
                         <header><br><br><br>
-                            <h2 style="color:#efaaaa">Vous etes temoins ou victimes?</h2>
+                            <h2 style="color:#efaaaa">Vous etes temoins ou victimes?</h2><br>
                             <p></p>
                         </header>
                         <p>Vous avez le sentiment que la justice vous abandonne? Parlez en, en tout <strong>anonymat</strong>. Il n'est jamais trop tard pour reagir</p>
@@ -125,7 +128,7 @@
                     <span class="image fit main3 bottom"><img src="/assets/democrat2.jpg" alt="" /></span>
                     <div class="content">
                         <header><br><br><br>
-                            <h2 style="color:#efaaaa">N'oubliez pas que personne n'est intouchable</h2>
+                            <h2 style="color:#efaaaa">N'oubliez pas que personne n'est intouchable</h2><br>
                             <p></p>
                         </header>
                         <p>Un commerce, les forces de l'ordre, les magistrats, votre employeur.<strong> L'abus de pouvoir</strong> se situe n'importe où <strong>denoncez le </strong>tout comme les autres membres</p>
@@ -174,16 +177,16 @@
                                
                             </div>
                         </div>
-                        <footer class="major">
+                        <!--<footer class="major">
                             <ul class="actions special">
                                 <li><a href="/users/sign_up" class="button">S'inscrire maintenant</a></li>
                             </ul>
                         </footer>
                     </div>
-                </section>
+                </section>-->
 
             <!-- Five -->
-                <section id="five" class="wrapper style2 special fade">
+                <!--<section id="five" class="wrapper style2 special fade">
                     <div class="container">
                         <header>
                             <h2>Magna faucibus lorem diam</h2>
@@ -196,7 +199,7 @@
                             </div>
                         </form>
                     </div>
-                </section>
+                </section> -->
 
             <!-- Footer -->
                 <footer id="footer">
