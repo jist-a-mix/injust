@@ -28,5 +28,5 @@
 //= require breakpoints.min
 //= require util
  //= require main
-//= require jquery.min
+
 //= require_tree .

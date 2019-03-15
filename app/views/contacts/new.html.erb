@@ -28,10 +28,10 @@
             
             <li class="nav-item">
                <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
-            </li>
+            
             <li class="nav-item">
               <%= link_to " Nouveau post" , new_post_path , class: "nav-link"%></li>
-            </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li>
@@ -41,16 +41,16 @@
             <%else%>
             <li class="nav-item">
               <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
-            </li>
-            </li>
+           
+            
             <li class="nav-item">
               <%= link_to " S'enregistrer " , new_user_registration_path , class: "nav-link"%></li>
-            </li>
+            
             <li class="nav-item">
               <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
-            </li>
+            
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact1</a>
+              <a class="nav-link" href="#">Contact</a>
             </li>
             <%end%>
 
@@ -74,15 +74,16 @@
     </header>
 
     <!-- Main Content -->
-<body><br><br><br>
-  <h2 style="color:#4cbf6a ">Contact</h2>
-<div id= "post-injust">
+
+  <div id= "post-injust">
+
 <%= simple_form_for @contact, url: create_contact_url do |f| %>
     
   <%= f.error_notification %>
   
 
   <div class="form-inputs"><br>
+    <h2 style="color:#4cbf6a ">Contact</h2><br><br><br>
 
     <%= f.input :prenom,label: 'Prenom'
                 %>
@@ -93,12 +94,14 @@
     <%= f.text_area :message,label: 'message',:input_html => {:rows => 10}
                   %>(detaillez au maximum,une reponse vous sera apportée dans les meilleurs delais)<br><br>
 
- <%= recaptcha_tags %>
+ <%= recaptcha_tags theme: 'dark'%>
 
  
   <div class="form-actions">
     <%= f.button :submit, "envoyer message" %>
   </div>
+
+ <a class="nav-link" href="/">retour accueil</a>
 <% end %>
 </div>
 </div>

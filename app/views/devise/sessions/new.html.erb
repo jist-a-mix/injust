@@ -1,7 +1,69 @@
-<h2><%= t(".sign_in") %></h2>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Injustice World</title>
+
+    
+
+  </head>
+   
+    
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="/">Injustice World</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <% if user_signed_in? %>
+            
+            <li class="nav-item">
+               <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+            
+            <li class="nav-item">
+              <%= link_to " Nouveau post" , new_post_path , class: "nav-link"%></li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+              <%= link_to " Se déconnecter ", destroy_user_session_path, method: :delete ,class: "nav-link" %>
+            </li>
+            <%else%>
+            <li class="nav-item">
+              <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
+            
+            
+            <li class="nav-item">
+              <%= link_to " S'enregistrer " , new_user_registration_path , class: "nav-link"%></li>
+            
+            <li class="nav-item">
+              <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+           
+            <li class="nav-item">
+              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+            
+            <%end%>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <header></header>
+    <div id= "post-injust">
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+  <div class="form-inputs"><br><br><br>
+    <h2 style="color:#1c7d98">Connexion</h2><br>
     <%= f.input :email,
                 required: false,
                 autofocus: true,
@@ -10,11 +72,13 @@
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
     <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+  
 
   <div class="form-actions">
     <%= f.button :submit, t(".sign_in") %>
   </div>
+  <%= render "devise/shared/links" %>
 <% end %>
 
-<%= render "devise/shared/links" %>
+</div>
+</div></body>

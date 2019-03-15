@@ -21,7 +21,7 @@ gem 'devise'
 gem 'faker'
 gem 'rails-erd'
 gem 'stripe'
-
+gem "autoprefixer-rails"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

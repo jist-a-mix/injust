@@ -7,25 +7,14 @@ Rails.application.configure do
   config.cache_classes = false
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = true
 
   # Show full error reports.
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
-  if Rails.root.join('tmp', 'caching-dev.txt').exist?
-    config.action_controller.perform_caching = true
 
-    config.cache_store = :memory_store
-    config.public_file_server.headers = {
-      'Cache-Control' => "public, max-age=#{2.days.to_i}"
-    }
-  else
-    config.action_controller.perform_caching = false
-
-    config.cache_store = :null_store
-  end
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
@@ -43,14 +32,21 @@ Rails.application.configure do
 
   # Highlight code that triggered database queries in logs.
   config.active_record.verbose_query_logs = true
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-
+config.log_formatter = ::Logger::Formatter.new
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+
+  if ENV["RAILS_LOG_TO_STDOUT"].present?
+    logger           = ActiveSupport::Logger.new(STDOUT)
+    logger.formatter = config.log_formatter
+    config.logger    = ActiveSupport::TaggedLogging.new(logger)
+  end
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
@@ -61,6 +57,19 @@ Rails.application.configure do
 config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
 config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.raise_delivery_errors = false
+  ActionMailer::Base.smtp_settings = {
+
+  :address    => 'smtp.gmail.com',
+  :domain   => 'mail.google.com',
+  :port   => 587,
+  :user_name    => ENV["EMAIL_USERNAME"],
+  :password   => ENV["EMAIL_PASSWORD"],
+  :authentication => 'login',
+  :enable_starttls_auto => true
+}
 # SMTP settings for gmail
 
 end
