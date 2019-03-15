@@ -61,12 +61,13 @@
 
 
 <body><br><br><br>
-  <h2 style="color:#4cbf6a "> Mon injustice</h2>
+  
 <div id= "post-injust">
 <%= simple_form_for @post do |f| %>
   
 
-  <div class="form-inputs"><br>
+  <div class="form-inputs"><br><br><br>
+    <h2 style="color:#4cbf6a "> Mon injustice</h2>
     <%= f.input :title,label: 'Titre'
                 %>
     <%= f.input :body,label: 'description',:input_html => {:rows => 10}
