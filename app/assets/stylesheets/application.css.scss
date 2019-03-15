@@ -11,11 +11,11 @@
  * It is generally better to create a new file per style scope.
   
 *= require main
- 
- *= require font-awesome.min
- *= require font-awesome
- 
  *= require bootstrap/css/bootstrap.min
+ *= require fontawesome-free/css/font-awesome.min
+ *= require fontawesome-free/css/font-awesome
+ 
+ 
  *= require fontawesome-free/css/all.min
  
  *= require_tree .
