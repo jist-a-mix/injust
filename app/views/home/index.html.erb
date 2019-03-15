@@ -20,9 +20,7 @@
           Menu
           <i class="fas fa-bars"></i>
         </button>
-               <% if user_signed_in? %>
-        <h3>Bienvenue <%= @user.username%></h3>
-        <%end%>
+           
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -65,6 +63,9 @@
       </div>
     </nav>
                 </header>
+                    <% if user_signed_in? %>
+        <h3 style="color:#B9E2DD">Bienvenue <%= @user.username%></h3>
+        <%end%>
 
             <!-- Banner -->
                 <section id="banner">
