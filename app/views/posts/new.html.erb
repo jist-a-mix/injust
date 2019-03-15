@@ -1,4 +1,18 @@
- <header><nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+ <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Injustice World</title>
+
+    
+
+  </head>
+   
+    
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
         <a class="navbar-brand" href="/">Injustice World</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,12 +28,12 @@
             
             <li class="nav-item">
                <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
-            </li>
+            
             <li class="nav-item">
               <%= link_to " Nouveau post" , new_post_path , class: "nav-link"%></li>
-            </li>
+            
             <li class="nav-item">
-              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+              <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
               <%= link_to " Se déconnecter ", destroy_user_session_path, method: :delete ,class: "nav-link" %>
@@ -27,25 +41,23 @@
             <%else%>
             <li class="nav-item">
               <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
-            </li>
-            </li>
+            
+            
             <li class="nav-item">
               <%= link_to " S'enregistrer " , new_user_registration_path , class: "nav-link"%></li>
-            </li>
+            
             <li class="nav-item">
               <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
-            </li>
+           
             <li class="nav-item">
-              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>>
-            </li>
+              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+            
             <%end%>
 
           </ul>
         </div>
       </div>
     </nav>
-
-</header>
 
 
 <body><br><br><br>
