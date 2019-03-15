@@ -62,16 +62,19 @@
         </div>
       </div>
     </nav>
-                </header>
+               
             
 
             <!-- Banner -->
                 <section id="banner">
-                                       <% if user_signed_in? %>
-        <h3 style="color:#B9E2DD">Bienvenue <%= @user.username%></h3>
-        <%end%>
+
                    
                     <div class="content">
+                        <divv id="mess">
+                                              <% if user_signed_in? %>
+        <h3 style="color:#B9E2DD">Bienvenue <%= @user.username%></h3>
+        <%end%>
+    </divv>
                         <header>
                      <h2>The future is justice</h2>
                             <p>Denoncez toutes vos injustices<br />
