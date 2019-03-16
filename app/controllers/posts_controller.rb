@@ -13,8 +13,10 @@ class PostsController < ApplicationController
 	
    def create
 @user_id = current_user.id
+@category = params[:category_id]
     @post = Post.new(posts_params)
     @post.user = current_user
+    @post.category_id = @category.to_i 
     if @post.save
       redirect_to root_path
       flash[:notice] = "injustice enregistree"
@@ -28,6 +30,9 @@ def show
     
     
 @post = Post.friendly.find(params[:id])
+@category = Category.find(@post.category_id)
+
+
     
         @user = @post.user
       
@@ -37,6 +42,7 @@ def show
 	
 
 end
+
  private
 def posts_params
     params.require(:post).permit(:title, :body,  :category_id, :created_at, :user_id)

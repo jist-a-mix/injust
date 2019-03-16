@@ -82,33 +82,34 @@
               <%else%>
 
 <% @posts.each do |poste| %>
-            <a href="/posts/<%= poste.friendly_id %>"></a>
+            <a href="/posts/<%= poste.friendly_id %>">
                 
                 
               <h3 class="post-title"><strong>
-                <%= poste.title%></strong>
+                <%= poste.title%></strong></a>
               </h3>
               <h3 class="post-subtitle">
                 <%= truncate(poste.body,length: 15)%></h3>
-                <a href="/posts/<%= poste.id %>">read more
+                <a href="/posts/<%= poste.friendly_id %>">read more</a>
    
               
             
-            </a>
+            
             <p class="post-meta">Posté
               
               <%=poste.created_at.strftime("le %e-%m-%Y ,à %Hh%M")%></p>
             
-          
+          <%end%> 
           <hr>
             <div class="clearfix">
             <a class="btn btn-primary float-right" href="posts"></li>Older Posts &rarr;</a>
           </div>
           <%end%>
+          
                  </div>
       </div>
     </div>
-    <%end%> 
+    
     
           <footer>
       <div class="container">
