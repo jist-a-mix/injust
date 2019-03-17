@@ -29,6 +29,9 @@ end
     when "User"
       @user = User.friendly.find(@slug_params)
       render 'devise/users/show'
+    when "Category"
+      @user = Category.friendly.find(@slug_params)
+      render 'categories/show'
     else raise ActiveRecord::RecordNotFound
     end
   end

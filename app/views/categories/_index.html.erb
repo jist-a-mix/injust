@@ -1,0 +1,29 @@
+    
+ <!-- Main Content -->
+    <div class="container">
+      <div class="container2">
+        
+          <div class="post-preview">
+          
+
+
+ <% @categories.each do  |category|%>
+<a href="/categories/<%= category.friendly_id %>">
+	<div class="post-subtitle">
+ 
+              
+                <%= category.name %><%= "(#{category.posts.count})   		" %> </a></div><br>
+                
+   
+              
+            
+            
+           
+
+            
+          <%end%> 
+          </div>
+
+                 </div>
+      </div>
+    </div>

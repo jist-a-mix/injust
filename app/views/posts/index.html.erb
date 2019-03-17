@@ -58,38 +58,36 @@
         </div>
       </div>
     </nav>
-     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('/assets/lib.jpg');size:'450x246'">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="site-heading">
-              <h1>Injustice World</h1>
-              <span class="subheading">Quand la justice est absente,denoncez la!</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      </header>
- <!-- Main Content -->
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="post-preview">
-            <% if @posts.blank?%>
+  <div id="main" class="wrapper style1" style="background-color: #cec4d8">
+
+          <div class="container">
+            <header class="major">
+              <h2>Les derniers posts</h2>
+              
+            
+
+
+            </header>
+
+            <div class="row gtr-150">
+              <div class="col-8 col-12-medium">
+
+                <!-- Content -->
+                  <section id="content" >
+                    <% if @posts.blank?%>
             <p>postez le premier</p><a class="btn btn-primary float-right" href="/posts/new">poster &rarr;</a>
               <%else%>
-
+                   
 <% @posts.each do |poste| %>
+
             <a href="/posts/<%= poste.friendly_id %>">
                 
                 
               <h3 class="post-title"><strong>
                 <%= poste.title%></strong></a>
               </h3>
-              <h3 class="post-subtitle">
-                <%= truncate(poste.body,length: 15)%></h3>
+                  <%= truncate(poste.body,length: 15)%>
+                    <%= truncate(poste.body,length: 15)%></h3>
                 <a href="/posts/<%= poste.friendly_id %>">read more</a>
    
               
@@ -101,16 +99,32 @@
 
             
           <%end%> 
-          <hr>
-            <div class="clearfix">
+           <div class="clearfix">
             <a class="btn btn-primary float-right" href="posts"></li>Older Posts &rarr;</a>
           </div>
           <%end%>
 
-                 </div>
-      </div>
-    </div>
-   <%= link_to " Voir les categories" , categories_path , class: "nav-link"%></li>
+                  </section>
+
+              </div>
+              <div class="col-4 col-12-medium">
+
+                <!-- Sidebar -->
+                  <section id="sidebar">
+                    <section>
+                      <%= render partial: "categories/index"%>
+                      
+                      
+                    </section>
+                    <hr />
+                    
+                  </section>
+
+              </div>
+            </div>
+          </div>
+        </div>
+  
 
     
     
