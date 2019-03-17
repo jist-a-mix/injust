@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 	before_action :authenticate_user!, :except => [:show, :index]
 	def index
 		@posts =Post.friendly.all
-		 @categories = Category.all
+		 @categories=Category.all
 	end
 	def new
 		@post =Post.new
@@ -47,4 +47,7 @@ end
 def posts_params
     params.require(:post).permit(:title, :body,  :category_id, :created_at, :user_id)
   end
+  def category_params
+    params.require(:Category)
+end
 end

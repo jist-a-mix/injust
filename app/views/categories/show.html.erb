@@ -1,0 +1,6 @@
+<% @category.posts.each do |post|  %>
+     <p><%= post.title  %></p>
+     <h3 class="post-subtitle">
+                <%= truncate(post.body,length: 15)%></h3>
+                <a href="/posts/<%= post.friendly_id %>">read more</a>
+     <%end%>

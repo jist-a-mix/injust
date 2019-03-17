@@ -1,5 +1,5 @@
     <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8 without BOM">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -75,45 +75,28 @@
  <!-- Main Content -->
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="post-preview">
-            <% if @posts.blank?%>
-            <p>postez le premier</p><a class="btn btn-primary float-right" href="/posts/new">poster &rarr;</a>
-              <%else%>
-
-<% @posts.each do |poste| %>
-            <a href="/posts/<%= poste.friendly_id %>">
+        
+          
+ <% @categories.each do  |category|%>
+<a href="/categories/<%= category.id %>">
+ 
+              
+                <%= category.name %><%= "(#{category.posts.count})   		" %> </a>
                 
-                
-              <h3 class="post-title"><strong>
-                <%= poste.title%></strong></a>
-              </h3>
-              <h3 class="post-subtitle">
-                <%= truncate(poste.body,length: 15)%></h3>
-                <a href="/posts/<%= poste.friendly_id %>">read more</a>
    
               
             
             
-            <p class="post-meta">Posté
-              
-              <%=poste.created_at.strftime("le %e-%m-%Y ,à %Hh%M")%></p>
+           
 
             
           <%end%> 
-          <hr>
-            <div class="clearfix">
-            <a class="btn btn-primary float-right" href="posts"></li>Older Posts &rarr;</a>
           </div>
-          <%end%>
 
                  </div>
       </div>
     </div>
-   <%= link_to " Voir les categories" , categories_path , class: "nav-link"%></li>
 
-    
-    
           <footer>
       <div class="container">
         <div class="row">
@@ -139,9 +122,9 @@
                 <a href="#">
                   <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>-->
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
                   </span>
-                </a>
+                </a>-->
               </li>
             </ul>
             <p class="copyright text-muted">Copyright &copy; InjusticeWorld.com</p>
@@ -150,12 +133,4 @@
       </div>
     </footer>
 </body>
-
-  
-    
-
-
-    <!-- Main Content -->
- 
-
-   </html>
+</html>

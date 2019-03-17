@@ -2201,16 +2201,18 @@ input, select, textarea {
 
 	form {
 		margin: 0 0 2em 0;
+
 	}
 
 		form.cta {
 			max-width: 35em;
 			margin-left: auto;
 			margin-right: auto;
+
 		}
 
 	label {
-		color: #ffffff;
+		color: grey;
 		display: block;
 		font-size: 0.9em;
 		font-weight: 300;
@@ -3771,9 +3773,6 @@ input, select, textarea {
 
 		/* Basic */
 
-			html, body {
-				overflow-x: hidden;
-			}
 
 			body, input, select, textarea {
 				font-size: 12pt;
@@ -3814,6 +3813,9 @@ input, select, textarea {
 			header.major {
 				margin: 0 0 2em 0;
 			}
+			.form-inputs{
+				background-color: blue;
+			}
 
 		/* Goto Next */
 
@@ -3831,6 +3833,7 @@ input, select, textarea {
 
 				.spotlight .image.main {
 					max-height: 60vh;
+					overflow-x: scroll;
 				}
 
 				.spotlight .content {
@@ -4075,6 +4078,9 @@ input, select, textarea {
 			}
 			h2{
 				font-size: 30px;
+			}
+			.form-inputs{
+				background-color: blue;
 			}
 
 
