@@ -3061,7 +3061,7 @@ input, select, textarea {
 			}
 
 		.spotlight .image.main2 {
-			display: inline-block;
+			display: flex;
 			width:70%;
 			height: 100%;
 			
@@ -3077,12 +3077,14 @@ input, select, textarea {
 				
 			}
 			.spotlight .image.main3 {
-			display: inline-block;
-			width:70%;
-			height: 100%;
-			margin-left: 550px;
+			display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    overflow: hidden
+}
 			
-		}
+		
 
 			.spotlight .image.main3 img{
 				
@@ -3671,7 +3673,7 @@ input, select, textarea {
 
 /* Medium */
 
-	@media screen and (max-width: 980px) {
+	@media screen and (max-width: 1024px) {
 
 		/* Basic */
 
@@ -3691,7 +3693,33 @@ input, select, textarea {
 					margin: 0;
 					max-height: 40vh;
 					overflow: hidden;
+					
 				}
+				.spotlight .image.main3 {
+			display: inline-block;
+			width:100%;
+			height: 100%;
+			margin-left: 0px;
+			
+		}
+		.spotlight .image.main2 {
+			display: flex;
+    justify-content: center;
+			height: 20%;
+			margin-right: 0px;
+			
+
+			
+		}
+		.spotlight .image.main2 mg {
+			width:100%;
+			height: 100%;
+			margin-right: 0px;
+			
+
+			
+		}
+		
 
 				.spotlight .content {
 					background-color: #1c1d26;

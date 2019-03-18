@@ -68,13 +68,17 @@
           <div class="col-lg-8 col-md-10 mx-auto">
             <p style=" font-size: 20px;font-style: normal"><%= simple_format(@post.body) %></p>
             <br><p style="float:right"><i>mis a jour <%= @post.updated_at.strftime("le %e-%m-%Y ,à %Hh%M")%></i></p>
+
           </div>
-<% if @user == current_user%>
-          <li class="nav-item">
-              <%= link_to " Modifier", edit_post_path  ,class: "nav-link" %>
-            </li>
-            <%end%>
+
+            
+            
+
         </div>
+         <% if @user == current_user%>
+         
+              <%= link_to " Modifier", edit_post_path  ,class: "btn btn-outline-primary float-right" %><br><br>
+              <%end%><br>
         <%= render partial: "comments/comments", locals: {commentable: @post} %>
   <%= render partial: "comments/form", locals: {commentable: @post} %>
       </div>
