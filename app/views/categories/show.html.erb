@@ -76,13 +76,16 @@
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="post-preview">
+          	<h2 style="color: #a857f9"><i>Catégorie <%=@category.name%></i></h2><br>
+          	<hr><br><br>
+
 <% @category.posts.each do |post|  %>
  <h3 class="post-title"><strong>
                 <%= post.title%></strong></a>
               </h3>
      
-     <h3 class="post-subtitle">
-                <%= truncate(post.body,length: 15)%></h3>
+     <h4 class="post-subtitle">
+                <%= truncate(post.body,length: 15)%></h4>
                 <a href="/posts/<%= post.friendly_id %>">read more</a>
      <p class="post-meta">Posté
               

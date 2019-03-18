@@ -77,7 +77,10 @@
                     <% if @posts.blank?%>
             <p>postez le premier</p><a class="btn btn-primary float-right" href="/posts/new">poster &rarr;</a>
               <%else%>
-                   
+
+                 
+ 
+
 <% @posts.each do |poste| %>
 
             <a href="/posts/<%= poste.friendly_id %>">
@@ -99,9 +102,23 @@
 
             
           <%end%> 
+       <%if Post.page.last_page?%>
            <div class="clearfix">
-            <a class="btn btn-primary float-right" href="posts"></li>Older Posts &rarr;</a>
+            
+            <%= link_to_prev_page @posts,"prev &rarr;".html_safe, class: "btn btn-primary float-left" %></li>
+            <%else%>
+            <%= link_to_next_page @posts,"Older Posts &rarr;".html_safe, class: "btn btn-primary float-right" %></li>
+
           </div>
+          <%end%>
+          
+          <%if Post.page.first_page?%>
+          <div class="clearfix">
+          <%= link_to_next_page @posts,"Older Posts &rarr;".html_safe, class: "btn btn-primary float-right" %></li>
+          <%else%>
+          <%= link_to_prev_page @posts,"prev &rarr;".html_safe, class: "btn btn-primary float-left" %></li>
+<div>
+   <% end %>
           <%end%>
 
                   </section>

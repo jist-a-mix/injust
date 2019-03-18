@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!, :except => [:show, :index]
 	def index
-		@posts =Post.friendly.all
+		@posts =Post.page(params[:page]).per(3)
 		 @categories=Category.all
+     
 	end
 	def new
 		@post =Post.new
