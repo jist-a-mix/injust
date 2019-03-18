@@ -36,13 +36,24 @@ def show
 
     
         @user = @post.user
-      
-    
-    
-
-	
 
 end
+def edit
+  @user = current_user
+  @post = Post.friendly.find(params[:id])
+ @category = Category.find(@post.category_id)
+
+end
+
+   def update
+    
+      @post = Post.friendly.find(params[:id])
+      if @post.update(posts_params)
+        flash[:success] = 'Post mis a jour '
+redirect_to @post
+  end
+end
+
 
  private
 def posts_params

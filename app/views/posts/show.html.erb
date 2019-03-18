@@ -54,8 +54,8 @@
             <div class="post-heading">
               
               <h3 class="subheading"><%=@post.title%></h3>
-              <span class="meta">Posté par
-               <%= @post.user.username%> <%= @post.created_at.strftime("le %e-%m-%Y ,à %Hh%M")%><p style="color:#cf7bef">Dans <i><a href="/categories/<%=@category.friendly_id%>"><%= @category.name.downcase %></a></i></p>
+              <span class="meta"><p>Posté par
+               <span style="color: #ef785e"><%= @post.user.username%></span> <%= @post.created_at.strftime("le %e-%m-%Y ,à %Hh%M")%></p><p style="color:#cf7bef">Dans <i><a href="/categories/<%=@category.friendly_id%>" style="text-decoration: none"><span style="color:#cf7bef"><%= @category.name.downcase %></a></i></span></p>
                 </span>
             </div>
           </div>
@@ -66,8 +66,14 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
-            <p style=" font-size: 20px;font-style: normal"><%= @post.body %></p>
+            <p style=" font-size: 20px;font-style: normal"><%= simple_format(@post.body) %></p>
+            <br><p style="float:right"><i>mis a jour <%= @post.updated_at.strftime("le %e-%m-%Y ,à %Hh%M")%></i></p>
           </div>
+<% if @user == current_user%>
+          <li class="nav-item">
+              <%= link_to " Modifier", edit_post_path  ,class: "nav-link" %>
+            </li>
+            <%end%>
         </div>
         <%= render partial: "comments/comments", locals: {commentable: @post} %>
   <%= render partial: "comments/form", locals: {commentable: @post} %>
