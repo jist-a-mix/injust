@@ -19,13 +19,13 @@
           Menu
           <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
             </li>
             <% if user_signed_in? %>
-            
+           
             <li class="nav-item">
                <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
             
@@ -33,24 +33,28 @@
               <%= link_to " Nouveau post" , new_post_path , class: "nav-link"%></li>
             
             <li class="nav-item">
+              <%= link_to " Modifier profil" , edit_user_registration_path , class: "nav-link"%></li>
+           
+            <li class="nav-item">
               <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+            
             <li class="nav-item">
               <%= link_to " Se déconnecter ", destroy_user_session_path, method: :delete ,class: "nav-link" %>
-            </li>
+           
             <%else%>
-            <li class="nav-item">
-              <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
-            
-            
-            <li class="nav-item">
-              <%= link_to " S'enregistrer " , new_user_registration_path , class: "nav-link"%></li>
             
             <li class="nav-item">
               <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
            
             <li class="nav-item">
               <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+              <li class="nav-item">
+              <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
             
+            
+            <li class="nav-item">
+              <%= link_to " S'enregistrer " , new_user_registration_path , class: "button-primary"%></li>
+           
             <%end%>
 
           </ul>

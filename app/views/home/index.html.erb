@@ -34,29 +34,28 @@
            
             <li class="nav-item">
                <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
-            </li>
+            
             <li class="nav-item">
               <%= link_to " Nouveau post" , new_post_path , class: "nav-link"%></li>
-            </li>
+            
             <li class="nav-item">
               <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
-            </li>
+            
             <li class="nav-item">
               <%= link_to " Se déconnecter ", destroy_user_session_path, method: :delete ,class: "button primary" %></li>
 
             
             <%else%>
-            <li class="nav-item">
-              <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
-            </li>
-            </li>
-           
+            
             <li class="nav-item">
               <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
-            </li>
+            
             <li class="nav-item">
               <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
-            </li>
+              <li class="nav-item">
+              <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
+            
+            
              <li class="nav-item">
               <%= link_to " S'inscrire gratuitement ",new_user_registration_path ,class: "button primary" %></li>
            
@@ -156,17 +155,17 @@
                             <div class="row gtr-uniform">
                                 <section class="col-4 col-6-medium col-12-xsmall">
                                     <span class="fas fa-hand-holding-heart"></span>
-                                    <h3>Respect</h3>
+                                    <h4>Respect</h4>
                                     <p></p>
                                 </section>
                                 <section class="col-4 col-6-medium col-12-xsmall">
                                     <span class="fas fa-handshake"></span>
-                                    <h3>Solidarité</h3>
+                                    <h4>Solidarité</h4>
                                     <p></p>
                                 </section>
                                 <section class="col-4 col-6-medium col-12-xsmall">
                                     <span class="fas fa-yin-yang"></span>
-                                    <h3>Empathie</h3>
+                                    <h4>Empathie</h4>
                                     <p></p>
                                 </section>
                                 <section class="col-4 col-6-medium col-12-xsmall">
