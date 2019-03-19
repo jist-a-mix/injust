@@ -4,6 +4,7 @@ class Post < ApplicationRecord
 	
 	has_many :comments, as: :commentable 
 	belongs_to :user
+	belongs_to :category
 	extend FriendlyId
 friendly_id :title, use: [:slugged, :history]
 validates :slug, presence: true, slug: true, if: :slug_changed?

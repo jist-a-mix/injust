@@ -10,7 +10,8 @@ Rails.application.routes.draw do
 get "home/cgu", to: "home#cgu", as: "cgu"
   resources :home
   
-  resources :categories
+  resources :categories 
+    
 
  get 'contact-me', to: 'contacts#new', as: 'new_contact'
   post 'contact-me', to: 'contacts#create', as: 'create_contact'

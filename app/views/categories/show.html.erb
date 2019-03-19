@@ -81,36 +81,64 @@
           <div class="post-preview">
           	<h2 style="color: #a857f9"><i>Catégorie <%=@category.name%></i></h2><br>
           	<hr><br><br>
-
-<% @category.posts.each do |post|  %>
- <h3 class="post-title"><strong>
+<% if @categories.blank?%>
+            <p>postez le premier</p><a class="btn btn-primary float-right" href="/posts/new">creer un post </a>
+              <%else%>
+<% @categories.each do |post|  %>
+  <a href="/posts/<%= post.friendly_id %>">
+                
+                
+              <h4 class="post-title"><strong>
                 <%= post.title%></strong></a>
-              </h3>
-     
-     <h4 class="post-subtitle">
-                <%= truncate(post.body,length: 15)%></h4>
+              </h4>
+                  <%= truncate(post.body,length: 15)%>
+                    <%= truncate(post.body,length: 15)%></h3>
                 <a href="/posts/<%= post.friendly_id %>">read more</a>
-     <p class="post-meta">Posté
-              
-              <%=post.created_at.strftime("le %e-%m-%Y ,à %Hh%M")%></p>
-
-            
-          <%end%> 
-
-
-                
-                
-             
-            
    
               
             
             
+            <p class="post-meta">Posté
+              
+              <%=post.created_at.strftime("le %e-%m-%Y ")%></p>
+
+            
+          <%end%> 
+            <%unless @categories.page.last_page?%>
+           <div class="clearfix">
+            
+            
+            <%= link_to_next_page @categories,"Older Posts &rarr;".html_safe, class: "btn btn-primary float-right" %></li>
+
+            <%else%>
+            <%= link_to_prev_page @categories,"&larr; prev ".html_safe, class: "btn btn-primary float-left" %></li>
+            
+
+          </div>
+
+          <%end%>
+          
+          <%unless @categories.page.first_page?%>
+          <div class="clearfix">
+          <%= link_to_next_page @categories,"Older Posts &rarr;".html_safe, class: "btn btn-primary float-right" %></li>
+          <%else%>
+          <%= link_to_prev_page @categories,"&larr; prev ".html_safe, class: "btn btn-primary float-left" %></li>
+<div>
+   <% end %>
+   <%end%>
+          
+
+                  
+
+              </div>
+   
+              
+            
+            </div>
             
          
           </div>
 
-                 </div>
       </div>
     </div>
  <footer>
