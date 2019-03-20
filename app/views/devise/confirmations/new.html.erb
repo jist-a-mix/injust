@@ -74,14 +74,14 @@
   <%= f.error_notification %>
   <%= f.full_error :confirmation_token %>
 
-  <div class="form-inputs">
-    <h2 style="color:#1c7d98"><h2><%= t(".resend_confirmation_instructions") %></h2>
+  <div class="form-inputs"><br><br><br>
+    <h2 style="color: blue"><h2><%= t(".resend_confirmation_instructions") %></h2>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
                 value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
                 input_html: { autocomplete: "email" } %>
-  </div>
+  
 
   <div class="form-actions">
     <%= f.button :submit, t(".resend_confirmation_instructions") %>

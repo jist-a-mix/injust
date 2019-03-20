@@ -85,7 +85,7 @@
                 hint: (t('devise.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :password_confirmation, label: t(".confirm_new_password"), required: true %>
-  </div>
+  
 
   <div class="form-actions">
     <%= f.button :submit, t(".change_my_password") %>
