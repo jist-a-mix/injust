@@ -5,7 +5,7 @@ ruby '2.5.1'
 gem 'simple_form'
 gem 'carrierwave', '>= 1.0.0.rc' , '< 2.0'
 gem 'jquery-rails'
-
+gem  'ruby-mailchecker'
 gem 'kaminari'
 gem 'font-awesome-sass'
 gem 'font-awesome-rails'
