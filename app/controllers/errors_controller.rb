@@ -3,7 +3,7 @@ class ErrorsController < ApplicationController
 
   def not_found
   	
-    render "/400",status: 400,:formats=>[:html]
+    render "/400",status: 404,:formats=>[:html]
   end
 
   def unacceptable
