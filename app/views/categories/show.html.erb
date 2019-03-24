@@ -92,7 +92,7 @@
                 <%= post.title%></strong></a>
               </h4>
                   <%= truncate(post.body,length: 15)%>
-                    <%= truncate(post.body,length: 15)%></h3>
+                 
                 <a href="/posts/<%= post.friendly_id %>">read more</a>
    
               
@@ -108,10 +108,10 @@
            <div class="clearfix">
             
             
-            <%= link_to_next_page @categories,"Older Posts &rarr;".html_safe, class: "btn btn-primary float-right" %></li>
+            <%= link_to_next_page @categories,"Suiv &rarr;".html_safe, class: "btn btn-primary float-right" %></li>
 
             <%else%>
-            <%= link_to_prev_page @categories,"&larr; prev ".html_safe, class: "btn btn-primary float-left" %></li>
+            <%= link_to_prev_page @categories,"&larr; Prec ".html_safe, class: "btn btn-primary float-left" %></li>
             
 
           </div>
@@ -120,9 +120,9 @@
           
           <%unless @categories.page.first_page?%>
           <div class="clearfix">
-          <%= link_to_next_page @categories,"Older Posts &rarr;".html_safe, class: "btn btn-primary float-right" %></li>
+          <%= link_to_next_page @categories,"Suiv &rarr;".html_safe, class: "btn btn-primary float-right" %></li>
           <%else%>
-          <%= link_to_prev_page @categories,"&larr; prev ".html_safe, class: "btn btn-primary float-left" %></li>
+          <%= link_to_prev_page @categories,"&larr; Prec ".html_safe, class: "btn btn-primary float-left" %></li>
 <div>
    <% end %>
    <%end%>
