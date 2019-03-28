@@ -4,7 +4,7 @@
 		protected
 		def configure_permitted_parameters
 
-			attributes = [:first_name, :last_name, :email, :password, :birth_date, :phone, :city,:username, :avatar]
+			attributes = [:first_name, :last_name, :email, :password, :birth_date, :phone, :city,:username, :avatar, :admin]
 
 
 			devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
@@ -12,6 +12,7 @@
 		end
 		def after_sign_in_path_for(resource)
 			root_path
+		
 		end
 		include HttpAcceptLanguage::AutoLocale
 		  protect_from_forgery with: :exception

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  
 	devise_for :users, controllers: { registrations: 'users/registrations' }
 
 	
@@ -11,13 +12,13 @@ get "home/cgu", to: "home#cgu", as: "cgu"
   resources :home
   
   resources :categories 
-    
+    resources :users
 
  get 'contact-me', to: 'contacts#new', as: 'new_contact'
   post 'contact-me', to: 'contacts#create', as: 'create_contact'
   
   
-  
+  resources :admins ,only: [:index,:show]
   resources :posts do
   	resources :comments, module: :posts
 

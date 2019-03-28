@@ -52,6 +52,17 @@ end
         flash[:success] = 'Post mis a jour '
 redirect_to @post
   end
+  end
+ 
+    def destroy
+    @post=Post.friendly.find(params[:id])
+     flash.notice="Message '#{@post.title}'effacé"
+    @post.destroy
+
+   
+
+    redirect_to posts_path
+
 end
 
 

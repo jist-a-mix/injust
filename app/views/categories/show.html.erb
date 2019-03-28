@@ -1,10 +1,10 @@
- <head>
-    <meta charset="UTF-8 without BOM">
+  <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Justice Fantome</title>
+    <title>Justice Fantôme</title>
 
     
 
@@ -14,47 +14,51 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="/">Justice Fantome</a>
+        <a class="navbar-brand" href="/">Justice Fantôme</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <% if user_signed_in? %>
            
-            <li class="nav-item">
-               <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+            <% if user_signed_in? %>
+           <li class="nav-item">
+               <%= link_to " Liste des injustices" , posts_path , class: "nav-link"%></li>
+            
             
             <li class="nav-item">
-              <%= link_to " Nouveau post" , new_post_path , class: "nav-link"%></li>
+              <%= link_to " Nouvelle injustice" , new_post_path , class: "nav-link"%></li>
             
             <li class="nav-item">
               <%= link_to " Modifier profil" , edit_user_registration_path , class: "nav-link"%></li>
            
             <li class="nav-item">
-              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+              <%= link_to " Contact" , new_contact_path , class: "nav-link"%></li>
+            
+            <li class="nav-item">
+              <%= link_to " Se déconnecter ", destroy_user_session_path, method: :delete ,class: "nav-link" %>
+              <% elsif user_signed_in? && current_user.admin? %>
+              <li class="nav-item">
+              <%= link_to " dashboard" , admins_path , class: "nav-link"%></li>
             
             <li class="nav-item">
               <%= link_to " Se déconnecter ", destroy_user_session_path, method: :delete ,class: "nav-link" %>
            
             <%else%>
             
-            <li class="nav-item">
-              <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+            
            
             <li class="nav-item">
-              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+              <%= link_to " Contact" , new_contact_path , class: "nav-link"%></li>
               <li class="nav-item">
               <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
             
             
             <li class="nav-item">
-              <%= link_to " S'enregistrer " , new_user_registration_path , class: "button primary"%></li>
-
+              <%= link_to " S'inscrire gratuitement " , new_user_registration_path , class: "button primary",style: 'padding-bottom:10px;display:flex;align-items:center;' %></li>
+           
+            
             <%end%>
 
           </ul>
@@ -93,14 +97,12 @@
               </h4>
                   <%= truncate(post.body,length: 15)%>
                  
-                <a href="/posts/<%= post.friendly_id %>">read more</a>
+                <a href="/posts/<%= post.friendly_id %>">(voir plus)</a>
    
               
             
             
-            <p class="post-meta">Posté
-              
-              <%=post.created_at.strftime("le %e-%m-%Y ")%></p>
+            <p class="post-meta">Créé <%=post.created_at.strftime("le %e-%m-%Y ")%></p>
 
             
           <%end%> 
@@ -171,7 +173,7 @@
                 </a>
               </li>
             </ul>
-            <p class="copyright text-muted">Copyright &copy; Justice Fantome.fr</p>
+            <p class="copyright text-muted">Copyright &copy; Justicefantome.fr</p>
           </div>
         </div>
       </div>

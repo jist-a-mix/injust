@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <title>Justice Fantome</title>
+    <title>Justice Fantôme</title>
     <%= csrf_meta_tag %>
     <%= csp_meta_tag %>
 
@@ -53,20 +53,20 @@ window.cookieconsent.initialise({
   <header>
  
      <% if flash[:notice] %>
-  <div class="alert alert-info" style="width:40%">
+  <div class="alert alert-info" style="width:40%,position:relative">
     <%= flash[:notice] %>
     <a href="#" class="close" data-dismiss="alert">&#215;</a>
   </div>
 <% end %>
 
 <% if flash[:alert] %>
-  <div class="alert alert-danger" style="width:40%">
+  <div class="alert alert-danger" style="width:40%,position:relative">
     <%= flash[:alert] %>
     <a href="#" class="close" data-dismiss="alert">&#215;</a>
   </div>
   <% end %>
   <% if flash[:recaptcha_error] %>
-  <div class="alert alert-danger" style="width:40%">
+  <div class="alert alert-danger" style="width:40%,position:relative">
     <%= flash[:recaptcha_error] = "Erreur reCaptcha" %>
     <a href="#" class="close" data-dismiss="alert">&#215;</a>
   </div>

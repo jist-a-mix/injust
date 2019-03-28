@@ -1,0 +1,51 @@
+ <div id="main" class="wrapper style1" style="background-color: #cec4d8">
+
+          <div class="container">
+            <header class="major">
+              <h2>Les derniers posts</h2>
+              
+            
+
+
+            </header>
+
+            <div class="row gtr-150">
+              <div class="col-8 col-12-medium">
+
+                <!-- Content -->
+                  <section id="content" >
+                
+                 
+ 
+
+<% @users.each do |user| %>
+
+            <a href="/admins/<%= user.friendly_id %>">
+                
+                
+              <h3 class="post-title"><strong>
+                pseudo:<%= user.username%></strong></a>
+              </h3>
+                  
+              
+   
+              
+            
+            <%if user.posts.present?%>
+            <p>nbre de posts: <span style="color: #008181 "><%=user.posts.count%></span></p><%else%>
+            <p class="post-meta">aucun post
+              
+              </p>
+
+            <%end%>
+          <%end%> 
+  
+
+                  </section>
+
+              </div>
+            
+
+              </div>
+            </div>
+          </div>

@@ -11,10 +11,8 @@
  *= require_tree .
  *= require_self
  */
- #mess{
- position:relative;
- 	text-align: center;
- 	 }
+
+
  	 .countin {
  
   margin: 100px auto 0;
@@ -51,6 +49,8 @@ border-right: 15px solid transparent;
   
   
 }
+
+
 @media all and (max-width: 1024px)
 {
 	.counter {

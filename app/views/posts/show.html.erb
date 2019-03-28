@@ -1,7 +1,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="/">Justice Fantome</a>
+        <a class="navbar-brand" href="/">Justice Fantôme</a>
 
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -9,22 +9,20 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
-            </li>
+           
             <% if user_signed_in? %>
            
             <li class="nav-item">
-               <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+               <%= link_to " Liste des injustices" , posts_path , class: "nav-link"%></li>
             
             <li class="nav-item">
-              <%= link_to " Nouveau post" , new_post_path , class: "nav-link"%></li>
+              <%= link_to " Nouvelle injustice" , new_post_path , class: "nav-link"%></li>
             
             <li class="nav-item">
               <%= link_to " Modifier profil" , edit_user_registration_path , class: "nav-link"%></li>
            
             <li class="nav-item">
-              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+              <%= link_to " Contact" , new_contact_path , class: "nav-link"%></li>
             
             <li class="nav-item">
               <%= link_to " Se déconnecter ", destroy_user_session_path, method: :delete ,class: "nav-link" %>
@@ -32,16 +30,16 @@
             <%else%>
             
             <li class="nav-item">
-              <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
+              <%= link_to " Liste des injustices" , posts_path , class: "nav-link"%></li>
            
             <li class="nav-item">
-              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
+              <%= link_to " Contact" , new_contact_path , class: "nav-link"%></li>
               <li class="nav-item">
               <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
             
             
             <li class="nav-item">
-              <%= link_to " S'enregistrer " , new_user_registration_path , class: "button primary"%></li>
+              <%= link_to " S'inscrire gratuitement" , new_user_registration_path , class: "button primary",style: 'padding-bottom:10px;display:flex;align-items:center;' %></li>
            
             <%end%>
 
@@ -57,7 +55,7 @@
             <div class="post-heading">
               
               <h3 class="subheading"><%=@post.title%></h3>
-              <span class="meta"><p>Posté par
+              <span class="meta"><p>Créé par
                <span style="color: #ef785e"><%= @post.user.username%></span> <%= @post.created_at.in_time_zone("Paris").strftime("le %e-%m-%Y ,à %Hh%M")%></p><p style="color:#cf7bef">Dans <i><a href="/categories/<%=@category.friendly_id%>" style="text-decoration: none"><span style="color:#cf7bef"><%= @category.name.downcase %></a></i></span></p>
                 </span>
             </div>
@@ -82,6 +80,9 @@
          
               <%= link_to " Modifier", edit_post_path  ,class: "btn btn-outline-primary float-right" %><br><br>
               <%end%><br>
+             <%if current_user.admin?%>
+             <%= link_to " supprimer",@post, method: :delete, data: {confirm: "etes vous sur de vouloir supprimer?"},class: "btn btn-outline-primary float-right" %><br><br>
+             <%end%>
         <%= render partial: "comments/comments", locals: {commentable: @post} %>
   <%= render partial: "comments/form", locals: {commentable: @post} %>
       </div>

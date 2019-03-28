@@ -4,7 +4,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Justice Fantôme</title>
+    <title>Justice Fantome</title>
 
     
 
@@ -14,27 +14,29 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="/">Justice Fantôme</a>
+        <a class="navbar-brand" href="/">Justice Fantome</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
         </button>
      <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-           
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
             <% if user_signed_in? %>
            
             <li class="nav-item">
-               <%= link_to " Liste des injustices" , posts_path , class: "nav-link"%></li>
+               <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
             
             <li class="nav-item">
-              <%= link_to " Nouvelle injustice" , new_post_path , class: "nav-link"%></li>
+              <%= link_to " Nouveau post" , new_post_path , class: "nav-link"%></li>
             
             <li class="nav-item">
               <%= link_to " Modifier profil" , edit_user_registration_path , class: "nav-link"%></li>
            
             <li class="nav-item">
-              <%= link_to " Contact" , new_contact_path , class: "nav-link"%></li>
+              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
             
             <li class="nav-item">
               <%= link_to " Se déconnecter ", destroy_user_session_path, method: :delete ,class: "nav-link" %>
@@ -42,15 +44,16 @@
             <%else%>
             
             <li class="nav-item">
-              <%= link_to " Liste des injustices" , posts_path , class: "nav-link"%></li>
+              <%= link_to " liste des posts" , posts_path , class: "nav-link"%></li>
            
             <li class="nav-item">
-              <%= link_to " Contact" , new_contact_path , class: "nav-link"%></li>
+              <%= link_to " contact" , new_contact_path , class: "nav-link"%></li>
               <li class="nav-item">
               <%= link_to " Se connecter " , new_user_session_path , class: "nav-link"%></li>
             
             
-            
+            <li class="nav-item">
+              <%= link_to " S'enregistrer " , new_user_registration_path , class: "button primary"%></li>
            
             
             <%end%>
@@ -86,14 +89,7 @@
 
   <div class="form-inputs"><br><br><br>
     <h2 style="color:#4cbf6a ">Inscription</h2><br>
-    <%= f.input :first_name,label: 'Prenom' ,required: true
-                %>
-    <%= f.input :last_name,label: 'Nom',required: true
-                  %>
-    <%= f.input :username,label: 'Pseudo ( seul votre pseudo sera visible )',required: true 
-                  %>
-                  <%= f.input :city,label: 'Ville' 
-                  %>
+   
     <%= f.input :email,
                 required: true,
                 autofocus: true ,
@@ -107,13 +103,13 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
 
-                <%= recaptcha_tags theme: 'dark' %>
+                
   
 
   <div class="form-actions">
     <%= f.button :submit, t(".sign_up") %>
   </div>
-  <%= render "devise/shared/links" %>
+  <%= render "admins/shared/links" %>
 <% end %>
 </div>
 
@@ -122,6 +118,8 @@
 
 
 </body>
+
+
 
 
 

@@ -1,0 +1,46 @@
+<body><header class="masthead" style="background-image: url('img/post-bg.jpg')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              
+              <h3 class="subheading"><%=link_to @user.username,edit_user_path %></h3><br>
+              <span class="meta"><p>nom: <%=@user.last_name%><br>
+                <%= @user.first_name%>
+                <br>
+                <%=@user.city%><br>
+               <span style="color: #ef785e"><%=@user.email%></span><br> derniere connexion<%= @user.created_at.in_time_zone("Paris").strftime("le %e-%m-%Y ,à %Hh%M")%></p>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+   
+  <article style="justify-content: : center">
+      
+          
+      
+            <% @user.posts.each do |post| %><br>
+            <div class="container">
+              <div class="row">
+                <div class="col-12 col-12-medium">
+            <a href="/posts/<%= post.friendly_id %>"><h3> titre: <%=post.title%></h3></a>
+            <p  class="post-meta"><%= simple_format(post.body) %></p><br>
+            <p style="float:right"><i>mis a jour <%= post.updated_at.in_time_zone("Paris").strftime("le %e-%m-%Y ,à %Hh%M")%></i></p><br>
+            <span style ="color:  #ed0bff "><%=post.category.name%></span>
+
+         
+
+            
+      </div> 
+  </div>
+       </div>
+
+    </article>
+
+<hr>
+     <%end%>
+
+<body>

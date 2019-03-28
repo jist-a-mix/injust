@@ -5,6 +5,6 @@ class WelcomeMailer < ApplicationMailer
     @user = user
     attachments.inline["nojustice.jpeg"] = File.read("#{Rails.root}/app/assets/images/nojustice.jpeg")
     @url  = 'www.justicefantome.fr'
-    mail to: @user.email, subject: ' Bienvenue sur justice fantome '
+    mail to: @user.email, subject: ' Bienvenue sur justice fantôme '
   end
 end
