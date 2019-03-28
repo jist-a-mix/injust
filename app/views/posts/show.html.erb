@@ -76,11 +76,12 @@
             
 
         </div>
-         <% if @user == current_user%>
+         <% if current_user == @user %>
          
               <%= link_to " Modifier", edit_post_path  ,class: "btn btn-outline-primary float-right" %><br><br>
-              <%end%><br>
-             <%if current_user.admin?%>
+              <br>
+              <%end%>
+             <% if current_user && current_user.admin?%>
              <%= link_to " supprimer",@post, method: :delete, data: {confirm: "etes vous sur de vouloir supprimer?"},class: "btn btn-outline-primary float-right" %><br><br>
              <%end%>
         <%= render partial: "comments/comments", locals: {commentable: @post} %>

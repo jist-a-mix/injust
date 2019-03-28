@@ -68,7 +68,7 @@
 
           <div class="container">
             <header class="major">
-              <h2>Les dernieres injustices</h2>
+              <h2>Les dernières injustices</h2>
               
             
 
@@ -81,13 +81,13 @@
                 <!-- Content -->
                   <section id="content" >
                     <% if @posts.blank?%>
-            <p>postez le premier</p><a class="btn btn-primary float-right" href="/posts/new">creer un post &rarr;</a>
+            <p>postez le premier</p><a class="btn btn-primary float-right" href="/posts/new">créer un post &rarr;</a>
               <%else%>
 
                  
  
 
-<% @posts.each do |poste| %>
+<% @posts.order('created_at DESC').each do |poste| %>
 
             <a href="/posts/<%= poste.friendly_id %>">
                 

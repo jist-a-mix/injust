@@ -6,9 +6,9 @@ class CategoriesController < ApplicationController
 		@category =Category.friendly_id.find(params[:id])
 
 		
-		
+		@category.posts = @category.posts.sort_by(&:created_at)
 		 
-		 @categories = Kaminari.paginate_array(@category.posts).page(params[:page]).per(1)
+		 @categories = Kaminari.paginate_array(@category.posts).page(params[:page]).per(8)
 
 		
 
