@@ -29,5 +29,11 @@ get "home/cgu", to: "home#cgu", as: "cgu"
   get "/422", to: "errors#unacceptable", via: :all
 get "/500", :to => "errors#internal_server_error", via: :all
 
+constraints(host: /^(?!www\.)/i) do
+  match '(*any)' => redirect { |params, request|
+    URI.parse(request.url).tap { |uri| uri.host = "www.#{uri.host}" }.to_s
+  }
+end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
