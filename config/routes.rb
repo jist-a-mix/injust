@@ -30,7 +30,7 @@ get "home/cgu", to: "home#cgu", as: "cgu"
 get "/500", :to => "errors#internal_server_error", via: :all
 
 constraints(host: /^(?!www\.)/i) do
-  match '(*any)' => redirect { |params, request|
+  get '(*any)' => redirect { |params, request|
     URI.parse(request.url).tap { |uri| uri.host = "www.#{uri.host}" }.to_s
   }
 end
