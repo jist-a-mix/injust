@@ -1,5 +1,5 @@
-source 'http://rubygems.org'
-git_source(:github) { |repo| "http://github.com/#{repo}.git" }
+source 'https://rubygems.org'
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 gem 'simple_form'
@@ -22,6 +22,7 @@ gem 'faker'
 gem 'rails-erd'
 gem 'stripe'
 gem "autoprefixer-rails"
+gem 'sassc'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -22,10 +22,9 @@
 <meta name="twitter:title" content="JusticeFantome.fr,le site anti-injustices - Justice Fantome"/>
 <meta name="twitter:description" content="Quand la justice est absente,dénoncez la"/>
 <meta name="twitter:image:src" content="nojustice.jpeg"/>
-    <%= csrf_meta_tag %>
-    <%= csp_meta_tag %>
+    
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
    <link rel="canonical" href="https://www.justicefantome.fr" />
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -39,6 +38,8 @@
   
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<%= csrf_meta_tag %>
+   
 
 <script>
 window.addEventListener("load", function(){
