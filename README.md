@@ -1,24 +1,42 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![MIT License](https://img.shields.io/badge/rails-5.2.2-green) ![Ruby License](https://img.shields.io/badge/ruby-2.5.1-red)
 
-Things you may want to cover:
 
-* Ruby version
+# Injust
 
-* System dependencies
+A platform where users can share their injustices and add comments.(Users must be logged in)
 
-* Configuration
 
-* Database creation
+## Installation
 
-* Database initialization
+Install injust
 
-* How to run the test suite
+```bash
+git clone git@github.com:jist-a-mix/injust.git
+cd injust
+```
+### Check your ruby version and rails version
+```bash
+ruby -v
+rails -v
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+The output should start with something like ``ruby 2.5.1`` and ``rails 5.2.2``
 
-* Deployment instructions
+If not, install the right ruby version using rbenv (it could take a while)
 
-* ...
+### Install dependencies
+```bash
+bundle install
+```
+
+### Initialize database
+```bash
+rails db:create db:migrate
+```
+
+### Serve
+```bash
+rails s
+```
+
